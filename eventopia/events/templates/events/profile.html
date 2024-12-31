@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome, {{ profile.user.username }}!</h1>
+<p>Your Profile</p>
+<div class="container">
+    <p><strong>Email:</strong> {{ profile.user.email }}</p> 
+    {% if profile.bio %}
+        <p><strong>Bio:</strong> {{ profile.bio }}</p>
+    {% endif %}
+    {% if profile.image %}
+        <img src="{{ profile.image.url }}" alt="Profile Image" width="100"> 
+    {% endif %}
+</div>
+{% endblock %}
